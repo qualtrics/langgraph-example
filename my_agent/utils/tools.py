@@ -7,6 +7,6 @@ url = 'https://pdx1.qualtrics.com/inbound-event/v1/events/json/triggers?urlToken
 @tool
 def postSlackMessage(query: str):
   response = requests.post(url, data=query)
-  return "success"
+  return response.text
 
 tools = [TavilySearchResults(max_results=1), postSlackMessage]
